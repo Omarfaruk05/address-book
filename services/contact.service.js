@@ -15,3 +15,13 @@ exports.getAllContactService = async()=> {
     const allContact = await Address.find({});
     return allContact;
 }
+
+exports.updateContactService = async(id, data)=> {
+    const result = await Address.updateOne({_id: id}, data);
+    return result;
+}
+
+exports.deleteContactService = async(id)=> {
+    const result = await Address.deleteOne({_id: id});
+    return result;
+}
