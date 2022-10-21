@@ -41,7 +41,6 @@ exports.createBulkContact = async(req, res) => {
 
 exports.getAllContact= async(req, res) => {
     try {
-        console.log(req.query)
         const queries = {};
         
         if(req.query.sort){
