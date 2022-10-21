@@ -41,7 +41,28 @@ exports.createBulkContact = async(req, res) => {
 
 exports.getAllContact= async(req, res) => {
     try {
-        const contacts = await getAllContactService();
+        console.log(req.query)
+        const queries = {};
+        
+        if(req.query.sort){
+            const sortBy = req.query.sort.split(',').join(' ');
+            queries.sortBy = sortBy;
+        }
+        
+        if(req.query.fields){
+            const fields = req.query.fields.split(',').join(' ');
+            queries.fields = fields;
+        }
+
+        if(req.query.page){
+            const {page = 1, limit= 10} = req.query;
+            const skip = (page -1) * parseInt(limit);
+            queries.skip = skip;
+            queries.limit = parseInt(limit);
+        }
+
+        const contacts = await getAllContactService(queries);
+
         if(!contacts){
            return res.status(200).json({
                 status: 'Success',

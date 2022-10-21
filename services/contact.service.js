@@ -11,8 +11,8 @@ exports.createBulkContactService = async(data)=> {
     return bulkContact;
 }
 
-exports.getAllContactService = async()=> {
-    const allContact = await Address.find({});
+exports.getAllContactService = async(queries)=> {
+    const allContact = await Address.find({}).skip(queries.skip).limit(queries.limit).sort(queries.sortBy).select(queries.fields);
     return allContact;
 }
 
