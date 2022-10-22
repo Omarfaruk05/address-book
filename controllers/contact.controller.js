@@ -1,4 +1,4 @@
-const { createContactService, createBulkContactService, getAllContactService, updateContactService, deleteContactService} = require("../services/contact.service");
+const { createContactService, createBulkContactService, getAllContactService, updateContactService, deleteContactService, getContactById} = require("../services/contact.service");
 
 
 exports.createContact = async(req, res) => {
@@ -39,6 +39,32 @@ exports.createBulkContact = async(req, res) => {
     }
 };
 
+exports.getContactById = async(req, res) => {
+    try {
+        const {id} = req.params;
+        const contact = await getContactById(id);
+
+        if(!contact){
+            return res.status(200).json({
+                status: 'Fail',
+                message:'There has no contact in this id.'
+            });
+        }
+
+        res.status(200).json({
+            status: 'Success',
+            message:'Successfully get the contact.',
+            data: contact,
+        });
+    } catch (error) {
+        res.status(400).json({
+            status: "Fail",
+            message: "Doesn't get the product.",
+            error: error.message,
+        });
+    }
+};
+
 exports.getAllContact= async(req, res) => {
     try {
         const queries = {};
@@ -64,7 +90,7 @@ exports.getAllContact= async(req, res) => {
 
         if(!contacts){
            return res.status(200).json({
-                status: 'Success',
+                status: 'Fail',
                 message:'There has no contacts.'
             });
         };
