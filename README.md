@@ -35,16 +35,13 @@
   "address": "Gazipur, Dhaka"
   }
   ]
-- # https://address-book-iota.vercel.app/api/v1/get-contact
-  This route is created for getting a single contact details.
+- # https://address-book-iota.vercel.app/api/v1/get-contact/:id
+  This route is created for getting a single contact details. [Here (:id) is the single contact id].
 - # https://address-book-iota.vercel.app/api/v1/get-all-contact
   This route is created for getting all contacts. Here you can filter sort and pagination.
-
-#### Demao api for pagination, filter and sort:
-
-https://address-book-iota.vercel.app/api/v1/get-all-contact?sort=email&fields=name,email&page=2&limit=2
-
+  Demao api for pagination, filter and sort:
+  https://address-book-iota.vercel.app/api/v1/get-all-contact?sort=email&fields=name,email&page=2&limit=2
 - # https://address-book-iota.vercel.app/api/v1/update-contact/:id
-  This route is created for update a contact.[Here (:id) is the update's product id]
+  This route is created for update a contact. Here (:id) is the update's contact id].
 - # https://address-book-iota.vercel.app/api/v1/delete-contact/:id
-  This route is created for delete a contact.[Here (:id) is the deleted product id]
+  This route is created for delete a contact. [Here (:id) is the deleted contact id].
