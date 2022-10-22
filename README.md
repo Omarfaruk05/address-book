@@ -2,9 +2,9 @@
 
 ### _Besically this project is a storhouse of addresses.For building purpas i use nodeJs, expressJs, mongodb._
 
-# TOKEN-SECRET = Bearer eyJhbGciOiJIUzI1NiJ9.YWJjZGU.NZd3O3A-L5iFQDyClSRJM7oq4oppm6tFE0IU8tkIF2E
+`TOKEN-SECRET` =` Bearer eyJhbGciOiJIUzI1NiJ9.YWJjZGU.NZd3O3A-L5iFQDyClSRJM7oq4oppm6tFE0IU8tkIF2E`
 
-## POST, PATCH, DELETE, UPDATE routes are protected. That means you have to pass TOKEN-SECRET as headers .
+### _POST, PATCH, DELETE, UPDATE routes are protected. That means you have to pass `TOKEN-SECRET` as headers._
 
 ## API end points:
 
